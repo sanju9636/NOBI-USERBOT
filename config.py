@@ -1,8 +1,6 @@
 from os import getenv
 from STORMDB.data import STORMS
 
-
-
 API_ID = int(getenv("API_ID", "25981592"))
 API_HASH = getenv("API_HASH", "709f3c9d34d83873d3c7e76cdd75b866")
 SESSION1 = getenv("SESSION")
@@ -23,9 +21,13 @@ SESSION8 = getenv("SESSION8")
 SESSION9 = getenv("SESSION9")
 SESSION10 = getenv("SESSION10")
 
-SUDO_USERS = list(map(lambda x: int(x), getenv("SUDO_USERS", "6257927828").split(" ")))
+SUDOS = os.getenv("SUDO_USERS", None)
+SUDO_USERS = []
+if SUDOS:
+    sudos = str(SUDO_USERS).split(" ")
+    for sudo_id in sudos:
+        SUDO_USERS.append(int(sudo_id))
 SUDO_USERS.append(OWNER_ID)
-
 for x in STORMS:
     SUDO_USERS.append(x)
 
