@@ -1,4 +1,3 @@
-import os
 from os import getenv
 from STORMDB.data import STORMS
 
@@ -23,7 +22,7 @@ SESSION8 = getenv("SESSION8")
 SESSION9 = getenv("SESSION9")
 SESSION10 = getenv("SESSION10")
 
-SUDOS = os.getenv("SUDO_USERS", None)
+SUDOS = getenv("SUDO_USERS", None)
 SUDO_USERS = []
 if SUDOS:
     sudos = str(SUDOS).split(" ")
