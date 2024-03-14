@@ -53,6 +53,9 @@
         "ALIVE_PIC": {
             "required": false
         },
+        "HELP_PIC": {
+            "required": false
+        }        
         "SUDO_USERS": {
             "description": "ꜱᴜᴅᴏᴜꜱᴇʀ ɪᴅ ❤️",
             "required": false
