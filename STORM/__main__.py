@@ -22,5 +22,5 @@ async def start_bot():
             print(f"{e}")
     await idle()
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(start_bot())
+if __name__ == "__main__":
+    asyncio.run(start_bot())
