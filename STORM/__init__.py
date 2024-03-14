@@ -2,7 +2,7 @@ from pyrogram import Client
 from config import API_ID, API_HASH, SUDO_USERS, OWNER_ID, HEROKU_APP_NAME, HEROKU_API_KEY, SESSIONS
 from datetime import datetime
 import time
-from aiohttp import ClientSession
+#from aiohttp import ClientSession
 
 StartTime = time.time()
 START_TIME = datetime.now()
@@ -12,7 +12,7 @@ clients = []
 ids = []
 
 SUDO_USERS.append(OWNER_ID)
-aiosession = ClientSession()
+#aiosession = ClientSession()
 
 if API_ID:
     API_ID = API_ID
