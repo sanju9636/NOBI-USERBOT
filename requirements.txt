@@ -3,3 +3,4 @@ flask_restful
 pyrogram==2.0.106
 TgCrypto
 heroku3
+aiohttp
