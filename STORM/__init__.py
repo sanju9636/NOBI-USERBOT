@@ -24,17 +24,17 @@ if API_HASH:
 else:
     print("WARNING: API HASH NOT FOUND ⚡")   
 
-app = Client(
-    name="app",
-    api_id=API_ID,
-    api_hash=API_HASH,
-    plugins=dict(root="STORM/modules"),
-    in_memory=True,
-)
+#app = Client(
+#    name="app",
+#    api_id=API_ID,
+#    api_hash=API_HASH,
+#    plugins=dict(root="STORM/modules"),
+#    in_memory=True,
+#)
 
 # Initialize clients based on provided session strings
 for i, session in enumerate(SESSIONS, 1):
     if session:
         print(f"Client{i}: Found.. Starting.. 📳")
-        client = Client(name=f"client{i}", api_id=API_ID, api_hash=API_HASH, session=session, plugins=dict(root="STORM/modules"))
+        client = Client(f"client #{i}", api_id=API_ID, api_hash=API_HASH, session=session, plugins=dict(root="STORM/modules"))
         clients.append(client)
