@@ -14,13 +14,18 @@ async def start_bot():
     for cli in clients:
         try:
             await cli.start()
-            ex = await cli.get_me()
             await join(cli)
-            print(f"Started {ex.first_name} 🔥")
+            print(f"Started {cli.me.first_name} 🔥")
             ids.append(ex.id)
         except Exception as e:
             print(f"{e}")
     await idle()
+    print("clients stopped.")
+    for cli in clients:
+        try:
+            await cli.stop()
+        except Exception as e:
+            print(f"{e}")
 
 if __name__ == "__main__":
     asyncio.run(start_bot())
