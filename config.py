@@ -1,4 +1,9 @@
+import os
 from os import getenv
+from dotenv import load_dotenv
+
+if os.path.exists("local.env"):
+    load_dotenv("local.env")
 from STORMDB.data import STORMS
 
 
