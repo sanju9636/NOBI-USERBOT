@@ -24,7 +24,7 @@ SESSION10 = getenv("SESSION10")
 SUDOS = os.getenv("SUDO_USERS", None)
 SUDO_USERS = []
 if SUDOS:
-    sudos = str(SUDO_USERS).split(" ")
+    sudos = str(SUDOS).split(" ")
     for sudo_id in sudos:
         SUDO_USERS.append(int(sudo_id))
 SUDO_USERS.append(OWNER_ID)
