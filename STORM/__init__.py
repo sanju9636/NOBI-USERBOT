@@ -36,5 +36,5 @@ app = Client(
 for i, session in enumerate(SESSIONS, 1):
     if session:
         print(f"Client{i}: Found.. Starting.. 📳")
-        client = Client(name=f"client{i}", api_id=API_ID, api_hash=API_HASH, session_name=session, plugins=dict(root="STORM/modules"))
+        client = Client(name=f"client{i}", api_id=API_ID, api_hash=API_HASH, session=session, plugins=dict(root="STORM/modules"))
         clients.append(client)
