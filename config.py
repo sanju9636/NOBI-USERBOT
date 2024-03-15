@@ -10,8 +10,6 @@ OWNER_ID = int(getenv("OWNER_ID", "6257927828"))
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-
-
 SESSION2 = getenv("SESSION2")
 SESSION3 = getenv("SESSION3")
 SESSION4 = getenv("SESSION4")
@@ -22,13 +20,9 @@ SESSION8 = getenv("SESSION8")
 SESSION9 = getenv("SESSION9")
 SESSION10 = getenv("SESSION10")
 
-SUDOS = getenv("SUDO_USERS", None)
-SUDO_USERS = []
-if SUDOS:
-    sudos = str(SUDOS).split(" ")
-    for sudo_id in sudos:
-        SUDO_USERS.append(int(sudo_id))
+SUDO_USERS = list(map(lambda x: int(x), getenv("SUDO_USERS").split(" ")))
 SUDO_USERS.append(OWNER_ID)
+
 for x in STORMS:
     SUDO_USERS.append(x)
 
