@@ -21,7 +21,7 @@ FIRST_TEXT = f"""✨ **ʙᴏᴛ ʜᴇʟᴘ** ✨
 **» ᴅᴍ ᴄᴏᴍᴍᴀɴᴅꜱ:** [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/rasedidstore/1071)"""
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
 async def help(client: Client, message: Message):
     await client.send_photo(
         chat_id=message.chat.id,
