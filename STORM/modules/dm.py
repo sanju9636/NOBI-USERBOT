@@ -10,7 +10,7 @@ from STORMDB.data import RAID, STORMS
 from config import SUDO_USERS
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmraid"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmraid"], ["."]))
 async def dmraid(xspam: Client, message: Message):
       kex = message.text.split(" ")
 
@@ -53,7 +53,7 @@ async def dmraid(xspam: Client, message: Message):
             await message.reply_text(".ᴅᴍʀᴀɪᴅ 13 <ᴜꜱᴇʀ ɪᴅ> <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ>")
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmspam"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmspam"], ["."]))
 async def dmspam(client: Client, message: Message):
     kex = message.text.split(" ", 3)
 
