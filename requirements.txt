@@ -4,3 +4,6 @@ pyrogram==2.0.105
 TgCrypto
 heroku3
 aiohttp
+requests
+random2
+asyncio
