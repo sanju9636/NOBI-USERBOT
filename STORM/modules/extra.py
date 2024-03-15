@@ -29,7 +29,7 @@ async def help(client: Client, message: Message):
         caption=FIRST_TEXT
     )
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["addsudo"], ["/", ".", "!"]))
+@Client.on_message(filters.user(OWNER_ID) & filters.command(["addsudo"], ["."]))
 async def add_sudo(_, message: Message):
        if not message.reply_to_message:
               await message.reply_text("ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜꜱᴇʀ 🙂")
