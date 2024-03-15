@@ -20,9 +20,13 @@ SESSION8 = getenv("SESSION8")
 SESSION9 = getenv("SESSION9")
 SESSION10 = getenv("SESSION10")
 
-SUDO_USERS = list(map(lambda x: int(x), getenv("SUDO_USERS").split(" ")))
+SUDOS = getenv("SUDO_USERS", None)
+SUDO_USERS = []
+if SUDOS:
+    sudos = str(SUDOS).split(" ")
+    for sudo_id in sudos:
+        SUDO_USERS.append(int(sudo_id))
 SUDO_USERS.append(OWNER_ID)
-
 for x in STORMS:
     SUDO_USERS.append(x)
 
