@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 
-@Client.on_message(filters.command(["join"], ["/", "!", "."]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["join"], ["."]) & filters.user(SUDO_USERS))
 async def join(client: Client, message: Message):
     kex = message.text.split(" ")
     if len(kex) == 1:
@@ -16,7 +16,7 @@ async def join(client: Client, message: Message):
         await message.reply_text(f"ᴇʀʀᴏʀ\n\n{str(ex)}")
   
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["leave", "remove"], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["leave", "remove"], ["."]))
 async def leave(xspam: Client, message: Message):
     kex = message.text.split(" ")
     if len(kex) > 1:
