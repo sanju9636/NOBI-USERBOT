@@ -7,7 +7,7 @@ from pyrogram.types import Message
 from STORMDB.data import STORMS, RAID, HRAID, LOVERAID, EMOJI, BDAY, SRAID, FLIRT, ABUSE
 from config import OWNER_ID, SUDO_USERS
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["raid"], ["/", "!", "."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["raid"], ["."]))
 async def raid(xspam: Client, message: Message):  
       kex = message.text.split(" ")
 
@@ -56,7 +56,7 @@ async def raid(xspam: Client, message: Message):
 
 rusers = []
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["rraid", "replyraid"], ["/", ".", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["rraid", "replyraid"], ["."]))
 async def rraid(xspam: Client, message: Message):
       global rusers
       kex = message.text.split(" ")
@@ -90,7 +90,7 @@ async def rraid(xspam: Client, message: Message):
           await message.reply_text(".ʀʀᴀɪᴅ <ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴜꜱᴇʀ> <ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜꜱᴇʀ>")
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["drraid", "draid", "dreplyraid"], ["/", ".", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["drraid", "draid", "dreplyraid"], ["."]))
 async def draid(xspam: Client, message: Message):
       global rusers
       kex = message.text.split(" ")
@@ -125,7 +125,7 @@ async def watcher(_, msg: Message):
 
 # HRAID
             
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["hraid"], ["/", "!", "."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["hraid"], ["."]))
 async def hraid(xspam: Client, message: Message):  
       kex = message.text.split(" ")
 
@@ -171,7 +171,7 @@ async def hraid(xspam: Client, message: Message):
       else:
           await message.reply_text(".ʜʀᴀɪᴅ 10 <ᴜꜱᴇʀɴᴀᴍᴇ ᴏꜰ ᴜꜱᴇʀ> <ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜꜱᴇʀ>")
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["loveraid"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["loveraid"], ["."]))
 async def loveraid(xspam: Client, e: Message):
       kex = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
 
@@ -197,7 +197,7 @@ async def loveraid(xspam: Client, e: Message):
       else:
             await e.reply_text("!ʟᴏᴠᴇʀᴀɪᴅ 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ>")          
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["emoji"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["emoji"], ["."]))
 async def emoji(xspam: Client, e: Message):
       kex = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
 
@@ -224,7 +224,7 @@ async def emoji(xspam: Client, e: Message):
             await e.reply_text("!ʟᴏᴠᴇʀᴀɪᴅ 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ>")
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["bspam"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["bspam"], ["."]))
 async def bspam(xspam: Client, e: Message):
       kex = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
 
@@ -250,7 +250,7 @@ async def bspam(xspam: Client, e: Message):
       else:
             await e.reply_text("!ʟᴏᴠᴇʀᴀɪᴅ 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ>")    
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["sraid"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["sraid"], ["."]))
 async def sraid(xspam: Client, e: Message):
       kex = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
 
@@ -276,7 +276,7 @@ async def sraid(xspam: Client, e: Message):
       else:
             await e.reply_text("!ꜱʀᴀɪᴅ 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ>")                
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["flirt"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["flirt"], ["."]))
 async def flirt(xspam: Client, e: Message):
       kex = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
 
@@ -302,7 +302,7 @@ async def flirt(xspam: Client, e: Message):
       else:
             await e.reply_text("!ꜰʟɪʀᴛ 10 <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ>")               
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["abuse"], [".", "/", "!"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["abuse"], ["."]))
 async def abuse(xspam: Client, e: Message):
       kex = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
 
