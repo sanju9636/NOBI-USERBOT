@@ -49,9 +49,12 @@ async def add_sudo(_, message: Message):
 
        sudousers = getenv("SUDO_USERS")
        target = message.reply_to_message.from_user.id
-       if len(sudousers) > 0:
-              newsudo = f"{sudousers} {target}"
+       if sudousers:
+           if len(sudousers) > 0:
+                  newsudo = f"{sudousers} {target}"
+           else:
+                  newsudo = f"{target}"
        else:
-              newsudo = f"{target}"
+            newsudo = f"{target}"
        await ok.edit(f"ɴᴇᴡ ꜱᴜᴅᴏ ᴜꜱᴇʀ `{target}`\nʀᴇsᴛᴀʀᴛɪɴɢ ⏳...")
-       heroku_var["SUDO_USERS"] = newsudo  
+       heroku_var["SUDO_USERS"] = newsudo
