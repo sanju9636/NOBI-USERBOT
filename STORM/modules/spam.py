@@ -9,7 +9,7 @@ from config import SUDO_USERS
 from STORMDB.data import GROUP, PORM
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(['spam'], [".", "!", "/"]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(['spam'], ["."]))
 async def spam(client: Client, message: Message):
     kex = message.text.split(" ", 2)
 
@@ -39,7 +39,7 @@ async def spam(client: Client, message: Message):
         await message.reply_text(f"!ꜱᴘᴀᴍ 13 <ʀᴇᴘʟʏ ᴛᴏ ᴛᴇxᴛ> <ʏᴏᴜʀ ᴛᴇxᴛ> <ʀᴇᴘʟʏ ᴛᴏ ᴜꜱᴇʀ>")
 
 
-@Client.on_message(filters.command(["pspam", "pornspam"], [".", "/", "!"]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.command(["pspam", "pornspam"], ["."]) & filters.user(SUDO_USERS))
 async def pspam(client: Client, message: Message):
     cid = message.chat.id
     if int(cid) in GROUP:
@@ -57,7 +57,7 @@ async def pspam(client: Client, message: Message):
         await message.reply_text(f"!ᴘꜱᴘᴀᴍ 13")
 
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["hang"], ["/", "!", "."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["hang"], ["."]))
 async def hang(xspam: Client, message: Message): 
     kex = message.text.split(" ")
     if len(kex) == 1:
