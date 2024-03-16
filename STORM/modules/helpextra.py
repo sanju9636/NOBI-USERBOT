@@ -21,7 +21,7 @@ EXTRA_TEXT = f"""
 • `{hl}gitinfo` <username> » ᴛᴏ ɢᴇᴛ ɢɪᴛ ᴀᴄᴄ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help extra"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpextra"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=EXTRA_TEXT)
