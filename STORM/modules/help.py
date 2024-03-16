@@ -216,8 +216,8 @@ X = IKM(
     ]
     ]
     )
-    sux = client
-@sux.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
+
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
 async def help_command(client, message):
     await message.edit("ᴘʀᴏᴄᴇꜱꜱɪɴɢ...")
     try:
