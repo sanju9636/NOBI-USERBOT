@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 import requests
-
+from config import SUDO_USERS
 
 WEATHER_API = "fadd97c7821d568d82f1cceaa06c7def"
 api_key = WEATHER_API
