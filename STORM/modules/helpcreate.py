@@ -13,7 +13,7 @@ CREATE_TEXT = f"""
 • `{hl}create channel (name)` » ᴛᴏ ᴄʀᴇᴀᴛᴇ ᴄʜᴀɴɴᴇʟ....
 """                                     
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help create"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpcreate"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=CREATE_TEXT)
