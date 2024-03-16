@@ -1,6 +1,3 @@
-import heroku3
-
-from os import getenv
 from config import SUDO_USERS, HELP_PIC
 
 from pyrogram import Client, filters
@@ -136,71 +133,80 @@ CREATE_TEXT = f"""
 """
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=FIRST_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=FIRST_TEXT)
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=FIRST_TEXT
+    )
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help extra"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=EXTRA_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=EXTRA_TEXT)
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=EXTRA_TEXT
+    )    
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help spam"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=SPAM_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=SPAM_TEXT)
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=SPAM_TEXT
+    )
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help dm"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=DM_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=DM_TEXT)
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=DM_TEXT
+    )
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help love"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=LOVE_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=LOVE_TEXT)              
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=LOVE_TEXT
+    )
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help fun"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=FUN_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=FUN_TEXT)           
-
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=FUN_TEXT
+    )              
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help news"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=NEWS_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=NEWS_TEXT)             
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=NEWS_TEXT
+    )
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help convert"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=CONVERT_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=CONVERT_TEXT)                          
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=CONVERT_TEXT
+    )            
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help info"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=INFO_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=INFO_TEXT)
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=INFO_TEXT
+    )                        
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["help create"], ["."]))
-async def help(xspam: Client, msg: Message):
-       if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
-              await xspam.send_photo(msg.chat.id, HELP_PIC, caption=CREATE_TEXT)
-       if ".mp4" in HELP_PIC or ".MP4," in HELP_PIC:
-              await xspam.send_video(msg.chat.   id, HELP_PIC, caption=CREATE_TEXT)                                
+async def help(client: Client, message: Message):
+    await client.send_photo(
+        chat_id=message.chat.id,
+        photo=HELP_PIC,
+        caption=CREATE_TEXT
+    )                            
