@@ -25,7 +25,7 @@ FUN_TEXT = f"""
 • `{hl}emoji` <ᴄᴏᴜɴᴛ> <ʀᴇᴘʟʏ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ> » ᴄʜᴇᴄᴋ ʙʏ ʏᴏᴜʀꜱᴇʟꜰ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help fun"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpfun"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=FUN_TEXT)
