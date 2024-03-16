@@ -217,12 +217,12 @@ X = IKM(
     ]
     )
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
+@Client.on_message(filters.command("help", hl))
 async def help(client, message):
     global sux
     if not sux:
-        sux = Client.me.username
-    await message.edit("ᴘʀᴏᴄᴇꜱꜱɪɴɢ...")
+        sux = Bot.me.username
+    await message.edit("processing...")
     try:
         nice = await client.get_inline_bot_results(bot=sux, query="inline_help")
     except Exception as e:
