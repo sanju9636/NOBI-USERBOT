@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
 import random
 from config import SUDO_USERS
+hl = "."
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["chance"], ["."]))
 async def chance(client, message):
