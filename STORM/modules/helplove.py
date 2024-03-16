@@ -19,7 +19,7 @@ LOVE_TEXT = f"""
 • `{hl}sraid` » ᴄʜᴇᴄᴋ ʙʏ ʏᴏᴜʀꜱᴇʟꜰ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help love"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helplove"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=LOVE_TEXT)
