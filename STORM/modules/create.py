@@ -1,7 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from config import SUDO_USERS
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["create"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["create"], ["."]))
 async def gcch(client: Client, message: Message):
     if len(message.command) < 3:
         return await message.edit(f". ᴄʀᴇᴀᴛᴇ ᴄʜᴀɴɴᴇʟ")
