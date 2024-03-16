@@ -1,6 +1,7 @@
 from pyrogram import Client, filters
+from config import SUDO_USERS
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["repo"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["repo"], ["."]))
 async def repo(client, message):
     msg = f"""
     ** ꜱᴛᴏʀᴍ ᴜꜱᴇʀʙᴏᴛ **
