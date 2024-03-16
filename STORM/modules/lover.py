@@ -1,7 +1,8 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
+from config import SUDO_USERS
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["iloveu", "lover"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["iloveu", "lover"], ["."]))
 async def lovers(client: Client, message: Message):
     e = await message.edit("ɪ ʟᴏᴠᴇᴇ ʏᴏᴜᴜᴜ 💕")
     await e.edit("💝💘💓💗")
