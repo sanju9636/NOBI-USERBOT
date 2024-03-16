@@ -11,7 +11,7 @@ CONVERT_TEXT = f"""
 • `{hl}tts` » ᴛᴏ ᴄᴏɴᴠᴇʀᴛ ᴛᴇxᴛ ᴛᴏ ᴠᴏɪᴄᴇ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help convert"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpconvert"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=CONVERT_TEXT)
