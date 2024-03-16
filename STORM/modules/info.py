@@ -1,5 +1,6 @@
 import os
 from pyrogram import Client, filters
+from config import SUDO_USERS
 
 def user(user):
     text = "**ᴜꜱᴇʀ-ᴅᴇᴛᴀɪʟꜱ**\n"
@@ -35,7 +36,7 @@ def chat(chat):
     text += f"\n\n**• ɪꜱ ꜰᴀᴋᴇ:** ᴛᴜʀᴇ" if chat.is_fake else ""
     return text
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["info"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["info"], ["."]))
 async def info(client, message):
     if (not message.reply_to_message) and ((not message.forward_from) or (not message.forward_from_chat)):
         info = user(message.from_user)
