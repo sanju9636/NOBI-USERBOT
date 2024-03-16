@@ -4,8 +4,7 @@ from random import choice
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from STORMDB.data import STORMS
-from STORMDB.truthDB import TRUTH
+from STORMDB.data import STORMS, TRUTH
 from config import OWNER_ID, SUDO_USERS
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["truth"], ["."]))
