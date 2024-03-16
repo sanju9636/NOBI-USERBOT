@@ -7,3 +7,4 @@ aiohttp
 requests
 random2
 asyncio
+gtts
