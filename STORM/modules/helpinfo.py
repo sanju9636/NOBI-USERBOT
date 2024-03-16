@@ -11,7 +11,7 @@ INFO_TEXT = f"""
 • `{hl}info` » ᴛᴏ ɢᴇᴛ ɪɴꜰᴏ ᴀʙᴏᴜᴛ ʀᴇᴘʟʏᴇᴅ ᴜꜱᴇʀ ᴀᴄᴄ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help info"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpinfo"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=INFO_TEXT)
