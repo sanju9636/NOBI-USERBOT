@@ -216,8 +216,7 @@ X = IKM(
     ]
     ]
     )
-
-app = Client("my_account")
+    sux = client
 @sux.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
 async def help_command(client, message):
     await message.edit("ᴘʀᴏᴄᴇꜱꜱɪɴɢ...")
@@ -237,9 +236,6 @@ async def help_command(client, message):
         await client.send_inline_bot_result(message.chat.id, nice.query_id, nice.results[0].id)
     except Exception as e:
         await message.reply(str(e))
-
-# Run the Pyrogram client
-app.run()
 
 ans = [IQRP(photo_url=HELP_PIC, thumb_url=PIC, title="Help", description="Help Menu", caption=HELP_TEXT, reply_markup=HELP_MARKUP)]
 
