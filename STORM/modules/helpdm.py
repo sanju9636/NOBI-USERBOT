@@ -13,7 +13,7 @@ DM_TEXT = f"""
 • `{hl}dmraid` <ᴄᴏᴜɴᴛ> <ʀᴇᴘʟʏ ᴏʀ ᴜꜱᴇʀɴᴀᴍᴇ> » ᴛᴏ ᴅᴏ ᴅᴍ ʀᴀɪᴅ ᴏɴ ᴛᴀʀɢᴇᴛᴇᴅ ᴜꜱᴇʀ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help dm"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpdm"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=DM_TEXT)
