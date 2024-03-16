@@ -25,7 +25,7 @@ SPAM_TEXT = f"""
 • `{hl}hang` <ᴄᴏᴜɴᴛ> » ꜱᴘᴀᴍꜱ ʜᴀɴɢ ᴍꜱɢꜱ ɪɴ ᴄʜᴀᴛ.....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help spam"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpspam"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=SPAM_TEXT)
