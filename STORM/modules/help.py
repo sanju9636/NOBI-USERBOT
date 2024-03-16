@@ -1,3 +1,6 @@
+import heroku3
+
+from os import getenv
 from config import SUDO_USERS, HELP_PIC
 
 from pyrogram import Client, filters
