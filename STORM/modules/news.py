@@ -1,10 +1,10 @@
 from pyrogram import Client, filters
 import requests
-
+from config import SUDO_USERS
 NEWS_API = "140dd16908d54879b350d0c7378306a5"
 api_key = NEWS_API
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["news"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["news"], ["."]))
 def get_news(client, message):
     try:
         response = requests.get(f"https://newsapi.org/v2/top-headlines?country=in&apiKey={api_key}")
