@@ -13,7 +13,7 @@ NEWS_TEXT = f"""
 • `{hl}weather (ʏᴏᴜʀ ᴄɪᴛʏ)` » ᴛᴏ ɢᴇᴛ ᴡᴇᴀᴛʜᴇʀ ɪɴꜰᴏʀᴍᴀᴛɪᴏɴ....
 """
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help news"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["helpnews"], ["."]))
 async def help(xspam: Client, msg: Message):
        if ".jpg" in HELP_PIC or ".png" in HELP_PIC:
               await xspam.send_photo(msg.chat.id, HELP_PIC, caption=NEWS_TEXT)
