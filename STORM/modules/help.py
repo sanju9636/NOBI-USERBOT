@@ -217,26 +217,26 @@ X = IKM(
     ]
     )
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
-async def help_command(client, message):
+@sux.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
+async def help(client, message):
+    global sux
+    if not sux:
+        sux = client
     await message.edit("ᴘʀᴏᴄᴇꜱꜱɪɴɢ...")
     try:
-        me = await client.get_me()
-        nice = await client.get_inline_bot_results(bot=me.username, query="inline_help")
+        nice = await client.get_inline_bot_results(bot=sux.me.username, query="inline_help")
     except Exception as e:
-        return await message.reply(str(e))
-    
+        return await message.reply(e)
     try:
         await message.delete()
         await message.delete()
     except:
         pass
-    
     try:
         await client.send_inline_bot_result(message.chat.id, nice.query_id, nice.results[0].id)
     except Exception as e:
-        await message.reply(str(e))
-
+        await message.reply(e)
+      
 ans = [IQRP(photo_url=HELP_PIC, thumb_url=PIC, title="Help", description="Help Menu", caption=HELP_TEXT, reply_markup=HELP_MARKUP)]
 
 @Client.on_inline_query()
