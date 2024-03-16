@@ -226,18 +226,26 @@ async def help(client, message):
         sux = client
     await message.edit("ᴘʀᴏᴄᴇꜱꜱɪɴɢ...")
     try:
-        nice = await sux.get_inline_bot_results(bot=sux.me.username, query="inline_help")
+        username = sux.me.username
+    except AttributeError:
+        return await message.reply("Unable to get bot username.")
+    
+    try:
+        nice = await sux.get_inline_bot_results(bot=username, query="inline_help")
     except Exception as e:
         return await message.reply(e)
+    
     try:
         await message.delete()
         await message.delete()
     except:
         pass
+    
     try:
         await sux.send_inline_bot_result(message.chat.id, nice.query_id, nice.results[0].id)
     except Exception as e:
         await message.reply(e)
+
       
 ans = [IQRP(photo_url=HELP_PIC, thumb_url=PIC, title="Help", description="Help Menu", caption=HELP_TEXT, reply_markup=HELP_MARKUP)]
 
