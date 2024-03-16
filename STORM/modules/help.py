@@ -217,14 +217,16 @@ X = IKM(
     ]
     )
 
-@sux.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
+sux = None
+
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["help"], ["."]))
 async def help(client, message):
     global sux
     if not sux:
         sux = client
     await message.edit("ᴘʀᴏᴄᴇꜱꜱɪɴɢ...")
     try:
-        nice = await client.get_inline_bot_results(bot=sux.me.username, query="inline_help")
+        nice = await sux.get_inline_bot_results(bot=sux.me.username, query="inline_help")
     except Exception as e:
         return await message.reply(e)
     try:
@@ -233,7 +235,7 @@ async def help(client, message):
     except:
         pass
     try:
-        await client.send_inline_bot_result(message.chat.id, nice.query_id, nice.results[0].id)
+        await sux.send_inline_bot_result(message.chat.id, nice.query_id, nice.results[0].id)
     except Exception as e:
         await message.reply(e)
       
