@@ -14,4 +14,4 @@ async def chance(client, message):
     chance_percentage = random.randint(1, 100)
     
     # Send the chance percentage as a reply
-    await message.reply(f"{text}\n\nᴄʜᴀɴᴄᴇ: {chance_percentage}%")
+    await message.reply(f"**{text}**\n\n**ᴄʜᴀɴᴄᴇ**: {chance_percentage}%")
