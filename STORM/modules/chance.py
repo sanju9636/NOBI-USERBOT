@@ -4,8 +4,11 @@ from config import SUDO_USERS
 
 hl = "."
 
+# Create a Pyrogram client instance
+app = Client("my_bot")
+
 # Define the chance command handler
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["chance"], [hl]))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["chance"], [hl]))
 async def chance(client, message):
     # Check if the command format is correct
     if hl + "chance " in message.text:
@@ -20,3 +23,7 @@ async def chance(client, message):
     else:
         # Handle incorrect command format
         await message.reply("Invalid command format. Please use /chance <text>")
+
+# Run the client
+if __name__ == "__main__":
+    app.run()
