@@ -5,9 +5,9 @@ from config import SUDO_USERS
 # Function to perform a Google search and return top search results
 def google_search(query, num_results=5):
     results = []
-    for result in search(query, stop=num_results, pause=2):
+    for idx, result in enumerate(search(query, num_results=num_results, pause=2), start=1):
         results.append(result)
-        if len(results) >= num_results:
+        if idx >= num_results:
             break
     return results
 
