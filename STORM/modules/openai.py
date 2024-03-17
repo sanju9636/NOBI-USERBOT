@@ -5,7 +5,7 @@ from config import SUDO_USERS, OPENAIKEY
 # Initialize your OpenAI API key
 openai.api_key = OPENAIKEY
 # Define the openai command handler
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["ai"], ["."]))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["openai"], ["."]))
 async def openai_command(client, message):
     # Extract the prompt from the message
     prompt = message.text.split(".openai ", maxsplit=1)[1]
