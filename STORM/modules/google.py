@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from googlesearch import search
-
+from config import SUDO_USERS
 # Function to perform a Google search and return top search results
 def google_search(query, num_results=5):
     results = []
