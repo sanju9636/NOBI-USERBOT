@@ -72,6 +72,7 @@
             "required": true
         },
         "OPENAIKEY": {
+            "description": "ᴛᴏ ᴜꜱᴇ ᴀɪ ʟᴏᴀᴅᴇᴅ ꜰᴇᴀᴛᴜʀᴇꜱ ɪɴ ᴜꜱᴇʀʙᴏᴛ 🤖",            
             "required": false
         },
         "HEROKU_APP_NAME": {
