@@ -8,7 +8,7 @@ hl = "."
 async def luck(client, message):
     if hl + "luck " in message.text:
         text = message.text.split(hl + "luck ", maxsplit=1)[1]
-        score = ["1 \n 🍀", "2 \n 🍀", "-1 \n 💩", "-5 \n 💩", "-10 \n 💩", "100 \n 🍀", "-99 \n 💩", "-100 \n 💩", "-10000 \n 💩", "-50 \n 💩"]
+        score = ["👎 \n 1", "👎 \n 2", "💩 \n -1", "💩 \n -5", "💩 \n -10", "🍀 \n 100", "💩 \n -99", "💩 \n -100", "💩 \n -10000", "💩 \n -50"]
         luck_score = random.choice(score)
         await message.reply(f"**{text}**\n\n**ʟᴜᴄᴋ**: **{luck_score}** %\n**")
     else:
