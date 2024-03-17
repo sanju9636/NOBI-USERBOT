@@ -5,12 +5,10 @@ import sys
 from re import sub
 from time import time
 
-
-from pyrogram import Client, filters, enums
+from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from config import SUDO_USERS
-from STORM.helper.PyroHelpers import ReplyCheck
 
 flood = {}
 profile_photo = "cache/pfp.jpg"
@@ -80,6 +78,7 @@ async def extract_user_and_reason(message, sender_chat=False):
 async def extract_user(message):
     return (await extract_user_and_reason(message))[0]
 
+
 @Client.on_message(
     filters.command(["unblock"], ".") & (filters.me | filters.user(SUDO_USER))
 )
@@ -95,6 +94,7 @@ async def unblock_user_func(client: Client, message: Message):
     await client.unblock_user(user_id)
     umention = (await client.get_users(user_id)).mention
     await message.edit(f"**ᴜɴʙʟᴏᴄᴋᴇᴅ** {umention}")
+
 
 @Client.on_message(
     filters.command(["block"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -133,6 +133,7 @@ async def setname(client: Client, message: Message):
         return await tex.edit(
             "ᴘʀᴏᴠɪᴅᴇ ᴀ ᴛᴇxᴛ ᴛᴏ ꜱᴇᴛ ᴀꜱ ʏᴏᴜʀ ɴᴀᴍᴇ"
         )
+
 
 @Client.on_message(
     filters.command(["setbio"], ".") & (filters.me | filters.user(SUDO_USER))
@@ -192,8 +193,9 @@ async def view_pfp(client: Client, message: Message):
         return
     await client.download_media(user.photo.big_file_id, file_name=profile_photo)
     await client.send_photo(
-        message.chat.id, profile_photo, reply_to_message_id=ReplyCheck(message)
+        message.chat.id, profile_photo, reply_to_message_id=message.message_id
     )
     await message.delete()
     if os.path.exists(profile_photo):
         os.remove(profile_photo)
+
