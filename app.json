@@ -71,6 +71,9 @@
         "OWNER_ID": {
             "required": true
         },
+        "OPENAIKEY": {
+            "required": false
+        },
         "HEROKU_APP_NAME": {
             "description": "ɪᴛ ɪꜱ ʀᴇQᴜɪʀᴇᴅ ᴛᴏ ᴀᴅᴅ ꜱᴜᴅᴏ ᴅɪʀᴇᴄᴛʟʏ ʙʏ ʙᴏᴛ ᴄᴍᴅ ✨",
             "required": true
