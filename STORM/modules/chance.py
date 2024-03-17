@@ -19,5 +19,12 @@ async def chance(client, message):
 # Create a Pyrogram client instance
 app = Client("my_bot")
 
+# Start the client
+async def main():
+    await app.start()
+    await app.idle()
+
 # Run the client
-app.run()
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(main())
