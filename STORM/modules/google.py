@@ -5,8 +5,10 @@ from config import SUDO_USERS
 # Function to perform a Google search and return top search results
 def google_search(query, num_results=5):
     results = []
-    for result in search(query, num=num_results, stop=num_results, pause=2):
+    for result in search(query, stop=num_results, pause=2):
         results.append(result)
+        if len(results) >= num_results:
+            break
     return results
 
 # Define the football command handler
