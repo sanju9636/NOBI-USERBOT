@@ -9,7 +9,7 @@ from time import time
 from pyrogram import Client, filters, enums
 from pyrogram.types import Message
 
-from config import SUDO_USER
+from config import SUDO_USERS
 from STORM.helper.PyroHelpers import ReplyCheck
 
 flood = {}
