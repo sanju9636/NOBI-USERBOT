@@ -9,6 +9,7 @@ HELP_PIC = getenv("HELP_PIC", "https://graph.org/file/f51fa8ff3d2c9fc8ea762.mp4"
 OWNER_ID = int(getenv("OWNER_ID", "6257927828"))
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
+OPENAIKEY = getenv("OPENAIKEY")
 
 SESSION2 = getenv("SESSION2")
 SESSION3 = getenv("SESSION3")
