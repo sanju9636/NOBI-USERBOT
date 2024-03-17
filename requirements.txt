@@ -9,4 +9,4 @@ random2
 asyncio
 gtts
 googlesearch-python
-openai
+openai==0.28
