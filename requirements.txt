@@ -10,3 +10,5 @@ asyncio
 gtts
 googlesearch-python
 openai==0.28
+beautifulsoup4
+google
