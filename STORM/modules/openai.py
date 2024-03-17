@@ -13,7 +13,7 @@ async def openai_command(client, message):
     # Call the OpenAI API to generate a completion based on the provided prompt
     try:
         response = openai.Completion.create(
-            engine="text-davinci-003",
+            engine="gpt-3.5",
             prompt=prompt,
             max_tokens=100
         )
