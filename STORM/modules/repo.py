@@ -6,11 +6,11 @@ async def repo(client, message):
     msg = f"""
     ** ꜱᴛᴏʀᴍ ᴜꜱᴇʀʙᴏᴛ **
 
-    • **ɢɪᴛʜᴜʙ** » [click here](https://github.com/VARC9210/STORM-USERBOT) 
-    • **ꜱᴜᴘᴘᴏʀᴛ** » [click here](https://t.me/STORM_CHATZ) 
-    • **ᴜᴘᴅᴀᴛᴇꜱ** » [click here](https://t.me/STORM_TECHH)
-    • **ᴅᴇᴠᴇʟᴏᴘᴇʀ** » [click here](https://t.me/kexx_xd)
+    • **ɢɪᴛʜᴜʙ** » [click here](https://github.com/sanju9636/NOBI-USERBOT) 
+    • **ꜱᴜᴘᴘᴏʀᴛ** » [click here](https://t.me/HerokuCCBins) 
+    • **ᴜᴘᴅᴀᴛᴇꜱ** » [click here](https://t.me/HerokuCCBins)
+    • **ᴅᴇᴠᴇʟᴏᴘᴇʀ** » [click here](https://t.me/TitanXSupport)
     
-    **ʙʏ @kexx_xd**
+    **ʙʏ @OP_SHIVA_007**
     """
     await message.edit(msg)
