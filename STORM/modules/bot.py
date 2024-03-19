@@ -11,9 +11,9 @@ KEX = f"""ㅤ ꜱᴛᴏʀᴍ ᴜꜱᴇʀʙᴏᴛ ‌🪽
 ➖➖➖➖➖➖➖➖➖➖➖
 **• ᴘʏᴛʜᴏɴ ᴠᴇʀꜱɪᴏɴ** 🐍: `3.11.3`
 **• ᴜꜱᴇʀʙᴏᴛ ᴠᴇʀꜱɪᴏɴ** ⚙️: `M1.0`
-**• ɢʀᴏᴜᴘ 💫: [ꜱᴛᴏʀᴍ ᴄʜᴀᴛᴢ 🥀](https://t.me/STORM_CHATZ)**
-**• ᴄʜᴀɴɴᴇʟ ✨: [ꜱᴛᴏʀᴍ ᴛᴇᴄʜ 🥀](https://t.me/STORM_TECHH)**
-**• ꜱᴇɴꜱᴇɪ 🫂: [ꜱᴛᴏʀᴍ 🥀](https://t.me/kexx_XD)**
+**• ɢʀᴏᴜᴘ 💫: [ꜱᴛᴏʀᴍ ᴄʜᴀᴛᴢ 🥀](https://t.me/TitanXSupport)**
+**• ᴄʜᴀɴɴᴇʟ ✨: [ꜱᴛᴏʀᴍ ᴛᴇᴄʜ 🥀](https://t.me/HerokuCCBins)**
+**• ꜱᴇɴꜱᴇɪ 🫂: [ꜱᴛᴏʀᴍ 🥀](https://t.me/TitanXSupport)**
 ➖➖➖➖➖➖➖➖➖➖➖"""
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["ping"], ["."]))
